@@ -15,5 +15,5 @@
      - Roboshop-Common
      - "Roboshop- {{item}}"
     region: us-east-1
-  loop: "{{instances}}"  
+  loop: "{{ instances }}"  
   when: action==create

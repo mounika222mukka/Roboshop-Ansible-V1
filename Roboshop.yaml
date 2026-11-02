@@ -1,0 +1,19 @@
+- name: create EC2 instances and R53 records
+  hosts: local
+  connection: local
+  vars:
+   instances: ["mongodb", "redis", "mysql", "rabbitmq"]
+   action: create
+   domain_name: devsecops92s.online
+   tasks:
+   - name: ceate ec2 instances
+   amazon.aws.ec2_instance:
+     name: "Roboshop-{{item}}"
+     ami_id: "{{ami_id}}"
+     instance_type: "{{t3.micro}}"
+     security_groups: 
+     - Roboshop-Common
+     - "Roboshop- {{item}}"
+     region: us-east1
+   loop: "{{instances}}"  
+   when: action==create

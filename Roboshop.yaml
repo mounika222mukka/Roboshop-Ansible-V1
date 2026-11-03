@@ -23,7 +23,7 @@
    # debug:
     #  msg: "{{ec2_output}}"
   - name: create R53 records \
-    amazon.aws.route53
+    amazon.aws.route53:
       state: present
       zone: "{{domain_name}}"
       record: "{{item.item}}.{{domain_name}}" #mongodb.devsecops92s.online#

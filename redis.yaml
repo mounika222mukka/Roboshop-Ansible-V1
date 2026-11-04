@@ -16,7 +16,7 @@
       replace: '0.0.0.0'
 
   - name: disable protected module
-    lininfile:
+    lineinfile:
       path: /etc/redis/redis.conf
       regexp: '^Protected-mode yes'
       line: 'protected-mode no'

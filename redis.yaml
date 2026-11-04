@@ -25,6 +25,9 @@
       name: redis
       state: restarted
       enabled: yes
+  - name: setup mysql root passwd
+    command: mysql_secure_installation --set-root-pass RoboShop@1
+        
 
 
       

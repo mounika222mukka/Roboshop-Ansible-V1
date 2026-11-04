@@ -14,7 +14,8 @@
       path: /etc/redis/redis.conf
       regexp: '127.0.0.1'
       replace: '0.0.0.0'
-  - nae: disable protected module
+
+  - name: disable protected module
     lininfile:
       path: /etc/redis/redis.conf
       regexp: '^Protected-mode yes'

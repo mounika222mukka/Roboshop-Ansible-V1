@@ -14,9 +14,13 @@
       name: mysqld
       state: started
       enabled: yes
-  - name: setup mysql root password
-    ansible.mysql.mysql_user:
-      name: root
-      password: "{{ mysql_root_password }}"
-      host: localhost
-      state: present
+  # - name: setup mysql root password
+  #   ansible.mysql.mysql_user:
+  #     name: root
+  #     password: "{{ mysql_root_password }}"
+  #     host: localhost
+      # state: present
+  
+  - name: setup mysql root passwd
+    command: mysql_secure_installation --set-root-pass RoboShop@1
+    

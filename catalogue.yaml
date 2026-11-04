@@ -27,7 +27,7 @@
       state: absent   
   - name: create app directory
     file:
-      path:/app
+      path: /app
       state: directory
   - name: download catalogue app
     get_url:

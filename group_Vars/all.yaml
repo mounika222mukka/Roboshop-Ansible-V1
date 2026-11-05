@@ -2,6 +2,7 @@ ansible_user: ec2-user
 ansible_password: DevOps321
 
 mongodb_host: mongodb.devsecops92s.online
-redis: redis.devsecops92s.online
+redis_host: redis.devsecops92s.online
+catalogue_host: catalogue.devsecops92s.online
 
 

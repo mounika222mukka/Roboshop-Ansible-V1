@@ -22,7 +22,7 @@
 
   - name: set JAVA_HOME
     copy:
-      content: "export JAVA_HOME= " {{ java25.stdout | dirname | dirname }}
+      content: "export JAVA_HOME={{ java25.stdout | dirname | dirname }}"
       dest: /etc/profile.d/java.sh
   - name: create roboshop system user
     user:

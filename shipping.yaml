@@ -55,5 +55,5 @@
     command: mvn clean package
     args: 
      chdir: /app
-    environment:
-      JAVA_HOME: "{{ java.stdout | dirname | dirname }}"
+    #environment:
+     # JAVA_HOME: "{{ java.stdout | dirname | dirname }}"

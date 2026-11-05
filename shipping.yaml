@@ -9,6 +9,7 @@
       name:
       - maven
       - java-25-openjdk-devel
+      - maven openjdk25
       state: present
   - name: find java 25 path
     shell: readlink -f $(ls /usr/lib/jvm/java-25-openjdk*/bin/java | head -1)
@@ -20,10 +21,6 @@
   - name: make java25 as default
     command: alternatives --set java {{ java25.stdout }}    
 
-  - name: set JAVA_HOME
-    copy:
-      content: "export JAVA_HOME={{ java25.stdout | dirname | dirname }}"
-      dest: /etc/profile.d/java.sh
   - name: create roboshop system user
     user:
       name: roboshop
@@ -59,4 +56,4 @@
     args: 
      chdir: /app
     environment:
-      MAVEN_OPTS="-Djdk.tls.namedGroups=\"secp256r1,secp384r1,ffdhe2048\""
+      JAVA_HOME: "{{ java.stdout | dirname | dirname }}"

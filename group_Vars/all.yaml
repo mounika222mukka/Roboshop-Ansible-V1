@@ -9,6 +9,7 @@ mysql_host: mysql.devsecops92s.online
 cart_host: cart.devsecops92s.online
 shipping_host: shipping.devsecops92s.online
 user_host: user.devsecops92s.online
+payment_host: payment.devsecops92s.online
 
 
 

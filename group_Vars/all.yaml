@@ -4,5 +4,12 @@ ansible_password: DevOps321
 mongodb_host: mongodb.devsecops92s.online
 redis_host: redis.devsecops92s.online
 catalogue_host: catalogue.devsecops92s.online
+rabbitmq_host: rabbitmq.devsecops92s.online
+mysql_host: mysql.devsecops92s.online
+cart_host: cart.devsecops92s.online
+shipping_host: shipping.devsecops92s.online
+user_host: user.devsecops92s.online
+
+
 
 

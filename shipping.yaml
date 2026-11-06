@@ -10,6 +10,7 @@
       - maven
       - java-25-openjdk-devel
       - maven-openjdk25
+      - mysql
       state: present
   - name: find java 25 path
     shell: readlink -f $(ls /usr/lib/jvm/java-25-openjdk*/bin/java | head -1)
@@ -55,4 +56,14 @@
     command: mvn clean package
     args: 
      chdir: /app
+  - name: move shipping jar file
+    command: mv target/shipping.jar shipping.jar
+    args: 
+     chdir: /app
+  - name: check cities data exist or not
+    command: mysql -h "{{mysql_host}}"" -uroot -p{{mysql_root_password}} -N -B -e "SELECT COUNT(*) FROM Cities.cities;"
+    register: cities_count
+  - name: print cities count 
+    debug:
+      msg: "{{cities_count}}"
     

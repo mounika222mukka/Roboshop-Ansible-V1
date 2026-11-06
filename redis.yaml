@@ -24,6 +24,11 @@
       path: /etc/redis/redis.conf
       regexp: '^Protected-mode yes'
       line: 'protected-mode no'
+  - name: Enable and start service
+    service: 
+      name: redis
+      state: started
+      enabled: yes
 
  
 

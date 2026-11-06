@@ -63,6 +63,9 @@
   - name: check cities data exist or not
     command: mysql -h "{{mysql_host}}" -uroot -p{{mysql_root_password}} -N -B -e "SELECT COUNT(*) FROM Cities.cities;"
     register: cities_count
+    ignore_errors: true
+    tags: 
+    - mysql
   - name: print cities count 
     debug:
       msg: "{{cities_count}}"

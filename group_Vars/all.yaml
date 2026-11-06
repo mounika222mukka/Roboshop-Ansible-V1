@@ -11,6 +11,8 @@ shipping_host: shipping.devsecops92s.online
 user_host: user.devsecops92s.online
 payment_host: payment.devsecops92s.online
 
+mysql_root_password: RoboShop@1
+
 
 
 
